@@ -35,21 +35,20 @@ function createSearchBox(context) {
 	//document.body.insertBefore(currentDiv, input);
 	//currentDiv.insertBefore(h3, input)
 	
+    //install jquery on site
+    console.log("WELCOME TO SYNCRAWLER");
+    var script = document.createElement('script');
+    script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+    script.type = 'text/javascript';
+    document.getElementsByTagName('head')[0].appendChild(script);
 
+    document.getElementById("search-button").addEventListener("click", search, false)
 	
 }
 
-
-createSearchBox()
-
-//install jquery on site
-console.log("WELCOME TO SYNCRAWLER");
-var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
-
-document.getElementById("search-button").addEventListener("click", search, false)
+window.onload(function() {
+    createSearchBox()
+})
 
 function search(){
         // if (e.keyCode == 13) {
