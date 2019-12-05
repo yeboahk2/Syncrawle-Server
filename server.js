@@ -39,19 +39,6 @@ app.listen(port, function () {
     console.log("Server started on port: " + port);
 });
 
-/*
-//request to initialize crawling of client
-app.post('/crawl/clientid/:id', async function(req, res) {
-    console.log("got request to crawl client with clientid: " + req.params.id)
-    //get client page from storage using client id
-    const clientPage = "http://www.google.com"
-    axios.post(`http://localhost:3333/crawl/${req.params.id}/www.google.com`)
-    console.log("passed that")
-    res.status(200)
-    res.send()
-})
-*/
-
 //request from user for keyword search
 app.post('/search/clientid/:clientid', async function(req, res) {
     const keyword = req.body.keyword
