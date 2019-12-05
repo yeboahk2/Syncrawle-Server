@@ -47,7 +47,7 @@ function createSearchBox(context) {
 }
 
 window.onload(function() {
-    createSearchBox()
+    createSearchBox(document.body)
 })
 
 function search(){
