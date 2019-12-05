@@ -66,7 +66,7 @@ window.onload = function(context) {
                 }
             }
 			//location.reload(true);            
-			xhttp.open("POST", `https://syncrawler-sever.herokuapp.com/search/clientid/${clientid}`, true);
+			xhttp.open("POST", `https://syncrawler-server.herokuapp.com/search/clientid/${clientid}`, true);
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.send(JSON.stringify({"keyword": document.getElementById('input-box').value}))
         }
