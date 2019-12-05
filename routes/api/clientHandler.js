@@ -47,15 +47,16 @@ window.onload = function(context) {
 
     //create search content display
     //createSearchDisplay(document.body);
-
-    //install jquery on site
-    var script = document.createElement('script');
-    script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-    script.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(script);
-
-    document.getElementById("search-button").addEventListener("click", search, false)
 }
+
+//install jquery on site
+console.log("WELCOME TO SYNCRAWLER");
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+document.getElementById("search-button").addEventListener("click", search, false)
 
 function search(){
         // if (e.keyCode == 13) {
