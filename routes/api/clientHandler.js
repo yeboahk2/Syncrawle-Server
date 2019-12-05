@@ -42,7 +42,7 @@ function createSearchBox(context) {
     script.type = 'text/javascript';
     document.getElementsByTagName('head')[0].appendChild(script);
 
-    document.getElementById("search-button").onclick = function() {
+    button.onclick = function() {
         console.log("user typed:")
         console.log(document.getElementById('input-box').value);
         var clientid = document.getElementById('syncrawler').getAttribute('clientid')
