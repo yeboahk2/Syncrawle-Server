@@ -9,7 +9,7 @@ function createSearchBox(context) {
 
 //creating the button
 	var button = document.createElement("BUTTON");
-	
+	button.id = "search-button"
 	var text = document.createTextNode("Search");
 	
 	button.appendChild(text);
@@ -76,8 +76,7 @@ window.onload = function(context) {
 
 		//e.keyCode == 13;
 		//};
-	
-    $("BUTTON").on( "click", function(){
+    $("#search-button").click(function(){
        // if (e.keyCode == 13) {
             console.log("user typed:")
             console.log(document.getElementById('input-box').value);
@@ -99,12 +98,11 @@ window.onload = function(context) {
         //}
 	});
 	
-	 $(document).on("keypress", "input", function(e){
-        if (e.keyCode == 13) {
-			$("BUTTON").click();
-			}
-	 });
-		//});
+	//  $(document).on("keypress", function(e){
+    //     if (e.keyCode == 13) {
+	// 		$("BUTTON").click();
+	// 		}
+	//  });
 };
 
 
