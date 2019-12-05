@@ -10,7 +10,7 @@ function createSearchBox(context) {
 //creating the button
 	var button = document.createElement("BUTTON");
     button.id = "search-button"
-    button.onclick = "search()"
+    button.onclick = search()
 	var text = document.createTextNode("Search");
 	
 	button.appendChild(text);
