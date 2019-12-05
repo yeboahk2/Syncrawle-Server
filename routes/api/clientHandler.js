@@ -9,7 +9,8 @@ function createSearchBox(context) {
 
 //creating the button
 	var button = document.createElement("BUTTON");
-	button.id = "search-button"
+    button.id = "search-button"
+    button.onclick = "search()"
 	var text = document.createTextNode("Search");
 	
 	button.appendChild(text);
@@ -105,8 +106,7 @@ window.onload = function(context) {
 	//  });
 };
 
-$(document).ready(function(){
-    $("#search-button").click(function(){
+function search(){
         // if (e.keyCode == 13) {
             console.log("user typed:")
             console.log(document.getElementById('input-box').value);
@@ -126,7 +126,6 @@ $(document).ready(function(){
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.send(JSON.stringify({"keyword": document.getElementById('input-box').value}))
         //}
-    });
-});
+}
 
 
