@@ -22,7 +22,7 @@ function createSearchBox(context) {
 }
 window.onload = function(context) {
 	//create the input box
-
+    console.log("WELCOME TO SYNCRAWLER");
     createSearchBox(document.body);
 
     //create search content display
@@ -66,7 +66,7 @@ window.onload = function(context) {
                 }
             }
 			//location.reload(true);            
-			xhttp.open("POST", `http://localhost:3030/search/clientid/${clientid}`, true);
+			xhttp.open("POST", `https://syncrawler-sever.herokuapp.com/search/clientid/${clientid}`, true);
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.send(JSON.stringify({"keyword": document.getElementById('input-box').value}))
         }
