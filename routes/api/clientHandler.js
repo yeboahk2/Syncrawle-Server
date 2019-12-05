@@ -46,9 +46,9 @@ function createSearchBox(context) {
 	
 }
 
-window.onload(function() {
+window.onload = function(context) {
     createSearchBox(document.body)
-})
+}
 
 function search(){
         // if (e.keyCode == 13) {
