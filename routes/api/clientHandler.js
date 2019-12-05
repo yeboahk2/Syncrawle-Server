@@ -1,6 +1,6 @@
-function createSearchBox(context) {
+function createSearchBox(contet) {
 	//var currentDiv = document.getElementById("div1");
-
+    var context = contet.children[0]
 	var input = document.createElement("input");
     input.type = "text";
     input.id = "input-box"
@@ -26,12 +26,12 @@ function createSearchBox(context) {
 	
 	var parentDiv = context;
 	
-	parentDiv.insertBefore(input, currentDiv);
-	parentDiv.insertBefore(button,currentDiv);
+	parentDiv.insertBefore(input, context);
+	parentDiv.insertBefore(button, context);
 
     //var result = document.createTextNode("Search Result: ");
 	//h3.appendChild(result)
-	parentDiv.insertBefore(h4, currentDiv);
+	parentDiv.insertBefore(h4, context);
 	//document.body.insertBefore(currentDiv, input);
 	//currentDiv.insertBefore(h3, input)
 	
