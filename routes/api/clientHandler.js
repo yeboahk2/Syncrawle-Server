@@ -40,14 +40,7 @@ function createSearchBox(context) {
 }
 
 
-window.onload = function(context) {
-	//create the input box
-
-    createSearchBox(document.body);
-
-    //create search content display
-    //createSearchDisplay(document.body);
-}
+createSearchBox()
 
 //install jquery on site
 console.log("WELCOME TO SYNCRAWLER");
