@@ -31,7 +31,7 @@ function createSearchBox(contet) {
 
     //var result = document.createTextNode("Search Result: ");
 	//h3.appendChild(result)
-	parentDiv.insertBefore(h4, context);
+	parentDiv.insertBefore(h4, input);
 	//document.body.insertBefore(currentDiv, input);
 	//currentDiv.insertBefore(h3, input)
 	
