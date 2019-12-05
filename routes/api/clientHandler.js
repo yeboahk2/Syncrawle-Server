@@ -54,7 +54,7 @@ window.onload = function(context) {
     script.type = 'text/javascript';
     document.getElementsByTagName('head')[0].appendChild(script);
 
-    document.getElementById("search-button").onclick = search
+    document.getElementById("search-button").addEventListener("click", search, false)
 }
 
 function search(){
