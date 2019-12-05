@@ -1,5 +1,5 @@
 function createSearchBox(context) {
-	var currentDiv = document.getElementById("div1");
+	//var currentDiv = document.getElementById("div1");
 
 	var input = document.createElement("input");
     input.type = "text";
@@ -24,7 +24,7 @@ function createSearchBox(context) {
     context.appendChild(h4)
 	
 	
-	var parentDiv = currentDiv.parentNode;
+	var parentDiv = context;
 	
 	parentDiv.insertBefore(input, currentDiv);
 	parentDiv.insertBefore(button,currentDiv);
