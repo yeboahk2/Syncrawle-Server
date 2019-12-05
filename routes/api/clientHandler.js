@@ -42,7 +42,25 @@ function createSearchBox(context) {
     script.type = 'text/javascript';
     document.getElementsByTagName('head')[0].appendChild(script);
 
-    document.getElementById("search-button").addEventListener("click", search, false)
+    document.getElementById("search-button").onclick = function() {
+        console.log("user typed:")
+        console.log(document.getElementById('input-box').value);
+        var clientid = document.getElementById('syncrawler').getAttribute('clientid')
+        //XMLHttpRequest object to send request to server
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("search-display").innerHTML = ""
+                console.log("the response from the server is:")
+                console.log(this.responseText)
+                document.getElementById("search-display").innerHTML += this.responseText
+            }
+        }
+        //location.reload(true);            
+        xhttp.open("POST", `https://syncrawler-server.herokuapp.com/search/clientid/${clientid}`, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send(JSON.stringify({"keyword": document.getElementById('input-box').value}))
+    }
 	
 }
 
