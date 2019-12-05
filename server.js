@@ -34,10 +34,37 @@ const port = process.env.PORT || 3030;
 app.use(bodyParser.json());
 app.use(cors());
 
+//Handle Production 
+if(process.env.NODE_ENV == 'production') {
+    app.use(express.static(__dirname + '/public/'))
+    app.get('/', function(req, res) {res.sendFile(__dirname + '/public/index.html')})
+}
+
 //initialize server
 app.listen(port, function () {
     console.log("Server started on port: " + port);
 });
+
+//Function to start a new client
+app.post('/new-client', async function (req, res) {
+    //TODO: check to see if client url already exists in database
+    clientUrl = req.body.clientUrl
+    console.log(`RECIEVED NEW CLIENT: ${clientUrl}`)
+    clientData.add({
+        URL: clientUrl,
+        Pages: {
+            '/': ""
+        }
+    }).then(docRef => {
+        console.log("created new clientDoc with id: ", docRef.id)
+        res.status(200)
+        res.send(`<script id="syncrawler" src="https://syncrawler-server.herokuapp.com/search" clientid="${docRef.id}"></script>`)
+    }).catch(error => {
+        console.log("error: ", error)
+        res.status(400)
+        res.send("error")
+    })
+})
 
 //request from user for keyword search
 app.post('/search/clientid/:clientid', async function(req, res) {
