@@ -28,7 +28,7 @@ var firebase = require('firebase/app')
 
 const app = express();
 
-const port = process.env.port || 3030;
+const port = process.env.PORT || 3030;
 
 //middleware
 app.use(bodyParser.json());
