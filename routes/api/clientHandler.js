@@ -105,4 +105,26 @@ window.onload = function(context) {
 	//  });
 };
 
+$("#search-button").click(function(){
+    // if (e.keyCode == 13) {
+         console.log("user typed:")
+         console.log(document.getElementById('input-box').value);
+         
+         //XMLHttpRequest object to send request to server
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("search-display").innerHTML = ""
+                 console.log("the response from the server is:")
+                 console.log(this.responseText)
+                 document.getElementById("search-display").innerHTML += this.responseText
+             }
+         }
+         //location.reload(true);            
+         xhttp.open("POST", `https://syncrawler-server.herokuapp.com/search/clientid/${clientid}`, true);
+         xhttp.setRequestHeader("Content-Type", "application/json");
+         xhttp.send(JSON.stringify({"keyword": document.getElementById('input-box').value}))
+     //}
+ });
+
 
